@@ -13,6 +13,7 @@ import sys
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.metrics import adjusted_rand_score
 
 # Add src directory to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
@@ -133,7 +134,6 @@ def main():
     print(f"     - Davies-Bouldin Index: {hier_metrics['davies_bouldin_index']:.3f}")
     
     # Agreement between methods
-    from sklearn.metrics import adjusted_rand_score
     ari = adjusted_rand_score(kmeans_labels, hier_labels)
     print(f"\n   Adjusted Rand Index (agreement): {ari:.3f}")
     print("   (1.0 = perfect agreement, 0.0 = random agreement)")

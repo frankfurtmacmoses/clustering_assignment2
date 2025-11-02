@@ -142,12 +142,21 @@ def find_optimal_clusters(data: np.ndarray, max_clusters: int = 10) -> Tuple[int
         kmeans.fit(data)
         inertias.append(kmeans.inertia_)
     
-    # Simple elbow detection (can be improved with more sophisticated methods)
-    # Calculate the rate of decrease
-    decreases = np.diff(inertias)
-    second_derivative = np.diff(decreases)
-    
-    # Find the point where decrease slows down most
-    optimal_k = np.argmax(second_derivative) + 2  # +2 because of range starting at 2
+    # Simple elbow detection using second derivative
+    if len(inertias) < 3:
+        # Not enough data points for elbow detection
+        optimal_k = 2
+    else:
+        # Calculate the rate of decrease
+        decreases = np.diff(inertias)
+        second_derivative = np.diff(decreases)
+        
+        # Find the point where decrease slows down most
+        # Handle case where all second derivatives are negative or equal
+        if len(second_derivative) > 0 and np.max(second_derivative) > np.min(second_derivative):
+            optimal_k = np.argmax(second_derivative) + 2  # +2 because of range starting at 2
+        else:
+            # Fallback to a reasonable default if no clear elbow
+            optimal_k = min(3, max_clusters)
     
     return optimal_k, inertias

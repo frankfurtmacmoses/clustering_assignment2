@@ -10,6 +10,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.cluster.hierarchy import dendrogram
+from sklearn.decomposition import PCA
+from sklearn.metrics import silhouette_samples
 from typing import Optional, Tuple
 
 
@@ -113,8 +115,6 @@ def plot_clusters_2d(data: np.ndarray, labels: np.ndarray,
     Returns:
         Matplotlib figure object
     """
-    from sklearn.decomposition import PCA
-    
     fig, ax = plt.subplots(figsize=figsize)
     
     # If data has more than 2 features, use PCA
@@ -208,8 +208,6 @@ def plot_silhouette_scores(data: np.ndarray, labels: np.ndarray,
     Returns:
         Matplotlib figure object
     """
-    from sklearn.metrics import silhouette_samples
-    
     fig, ax = plt.subplots(figsize=figsize)
     
     # Compute silhouette scores for each sample
