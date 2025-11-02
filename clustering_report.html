@@ -8303,7 +8303,7 @@ Based on the evaluation metrics:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>html<span class="w"> </span>clustering.ipynb<span class="w"> </span>--output<span class="w"> </span>clustering_report.html
@@ -8320,149 +8320,13 @@ Based on the evaluation metrics:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[NbConvertApp] Converting notebook clustering.ipynb to pdf
-[NbConvertApp] ERROR | Error while converting 'clustering.ipynb'
-Traceback (most recent call last):
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 487, in export_single_notebook
-    output, resources = self.exporter.from_filename(
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/templateexporter.py", line 390, in from_filename
-    return super().from_filename(filename, resources, **kw)  # type:ignore[return-value]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 201, in from_filename
-    return self.from_file(f, resources=resources, **kw)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/templateexporter.py", line 396, in from_file
-    return super().from_file(file_stream, resources, **kw)  # type:ignore[return-value]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 220, in from_file
-    return self.from_notebook_node(
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/pdf.py", line 184, in from_notebook_node
-    latex, resources = super().from_notebook_node(nb, resources=resources, **kw)
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/latex.py", line 92, in from_notebook_node
-    return super().from_notebook_node(nb, resources, **kw)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/templateexporter.py", line 429, in from_notebook_node
-    output = self.template.render(nb=nb_copy, resources=resources)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/index.tex.j2", line 8, in top-level template code
-    ((* extends cell_style *))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/style_jupyter.tex.j2", line 176, in top-level template code
-    \prompt{(((prompt)))}{(((prompt_color)))}{(((execution_count)))}{(((extra_space)))}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/base.tex.j2", line 7, in top-level template code
-    ((*- extends 'document_contents.tex.j2' -*))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/document_contents.tex.j2", line 51, in top-level template code
-    ((*- block figure scoped -*))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/display_priority.j2", line 5, in top-level template code
-    ((*- extends 'null.j2' -*))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/null.j2", line 30, in top-level template code
-    ((*- block body -*))
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/base.tex.j2", line 241, in block 'body'
-    ((( super() )))
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/null.j2", line 32, in block 'body'
-    ((*- block any_cell scoped -*))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/null.j2", line 85, in block 'any_cell'
-    ((*- block markdowncell scoped-*)) ((*- endblock markdowncell -*))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/document_contents.tex.j2", line 68, in block 'markdowncell'
-    ((( cell.source | citation2latex | strip_files_prefix | convert_pandoc('markdown+tex_math_double_backslash', 'json',extra_args=[]) | resolve_references | convert_explicitly_relative_paths | convert_pandoc('json','latex'))))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/filters/pandoc.py", line 36, in convert_pandoc
-    return pandoc(source, from_format, to_format, extra_args=extra_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/utils/pandoc.py", line 50, in pandoc
-    check_pandoc_version()
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/utils/pandoc.py", line 98, in check_pandoc_version
-    v = get_pandoc_version()
-        ^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/utils/pandoc.py", line 75, in get_pandoc_version
-    raise PandocMissing()
-nbconvert.utils.pandoc.PandocMissing: Pandoc wasn't found.
-Please check that pandoc is installed:
-https://pandoc.org/installing.html
-[NbConvertApp] ERROR | Error while converting 'clustering.ipynb'
-Traceback (most recent call last):
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 487, in export_single_notebook
-    output, resources = self.exporter.from_filename(
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/templateexporter.py", line 390, in from_filename
-    return super().from_filename(filename, resources, **kw)  # type:ignore[return-value]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 201, in from_filename
-    return self.from_file(f, resources=resources, **kw)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/templateexporter.py", line 396, in from_file
-    return super().from_file(file_stream, resources, **kw)  # type:ignore[return-value]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 220, in from_file
-    return self.from_notebook_node(
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/pdf.py", line 184, in from_notebook_node
-    latex, resources = super().from_notebook_node(nb, resources=resources, **kw)
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/latex.py", line 92, in from_notebook_node
-    return super().from_notebook_node(nb, resources, **kw)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/exporters/templateexporter.py", line 429, in from_notebook_node
-    output = self.template.render(nb=nb_copy, resources=resources)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/index.tex.j2", line 8, in top-level template code
-    ((* extends cell_style *))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/style_jupyter.tex.j2", line 176, in top-level template code
-    \prompt{(((prompt)))}{(((prompt_color)))}{(((execution_count)))}{(((extra_space)))}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/base.tex.j2", line 7, in top-level template code
-    ((*- extends 'document_contents.tex.j2' -*))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/document_contents.tex.j2", line 51, in top-level template code
-    ((*- block figure scoped -*))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/display_priority.j2", line 5, in top-level template code
-    ((*- extends 'null.j2' -*))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/null.j2", line 30, in top-level template code
-    ((*- block body -*))
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/base.tex.j2", line 241, in block 'body'
-    ((( super() )))
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/null.j2", line 32, in block 'body'
-    ((*- block any_cell scoped -*))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/null.j2", line 85, in block 'any_cell'
-    ((*- block markdowncell scoped-*)) ((*- endblock markdowncell -*))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/share/jupyter/nbconvert/templates/latex/document_contents.tex.j2", line 68, in block 'markdowncell'
-    ((( cell.source | citation2latex | strip_files_prefix | convert_pandoc('markdown+tex_math_double_backslash', 'json',extra_args=[]) | resolve_references | convert_explicitly_relative_paths | convert_pandoc('json','latex'))))
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/filters/pandoc.py", line 36, in convert_pandoc
-    return pandoc(source, from_format, to_format, extra_args=extra_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/utils/pandoc.py", line 50, in pandoc
-    check_pandoc_version()
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/utils/pandoc.py", line 98, in check_pandoc_version
-    v = get_pandoc_version()
-        ^^^^^^^^^^^^^^^^^^^^
-  File "/home/frankfurt/miniconda3/envs/scanpy-env/lib/python3.11/site-packages/nbconvert/utils/pandoc.py", line 75, in get_pandoc_version
-    raise PandocMissing()
-nbconvert.utils.pandoc.PandocMissing: Pandoc wasn't found.
-Please check that pandoc is installed:
-https://pandoc.org/installing.html
+<pre>[NbConvertApp] Converting notebook clustering.ipynb to html
+[NbConvertApp] WARNING | Alternative text is missing on 5 image(s).
+[NbConvertApp] WARNING | Alternative text is missing on 5 image(s).
+[NbConvertApp] Writing 1445568 bytes to clustering_report.html
+[NbConvertApp] Writing 1445568 bytes to clustering_report.html
+HTML report generated successfully!
+HTML report generated successfully!
 </pre>
 </div>
 </div>
